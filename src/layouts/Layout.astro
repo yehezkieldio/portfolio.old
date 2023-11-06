@@ -1,4 +1,6 @@
 ---
+import "@fontsource-variable/manrope";
+
 interface Props {
   title: string;
 }
@@ -16,7 +18,9 @@ const { title } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body>
+  <body
+    class="dark font-sans bg-aztec-100 text-black dark:text-aztec-100 dark:bg-aztec-950"
+  >
     <slot />
   </body>
 </html>
