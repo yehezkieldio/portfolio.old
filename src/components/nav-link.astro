@@ -1,0 +1,15 @@
+---
+interface Props {
+  title: string;
+  link: string;
+}
+
+const { title, link } = Astro.props;
+---
+
+<a
+  class="group inline-flex h-10 w-max items-center justify-center rounded-md bg-white px-4 py-2 text-sm font-normal transition-colors hover:bg-aztec-100 hover:text-aztec-900 focus:bg-aztec-100 focus:text-aztec-900 focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-aztec-100/50 data-[state=open]:bg-aztec-100/50 dark:bg-aztec-950 dark:hover:bg-aztec-800 dark:hover:text-aztec-50 dark:focus:bg-aztec-800 dark:focus:text-aztec-50 dark:data-[active]:bg-aztec-800/50 dark:data-[state=open]:bg-aztec-800/50"
+  href={link}
+>
+  {title}
+</a>

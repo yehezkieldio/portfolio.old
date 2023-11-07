@@ -1,0 +1,60 @@
+---
+import { Image } from "astro:assets";
+import Avatar from "../images/avatar.jpg";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<main
+  class="mx-auto max-w-5xl flex-col items-center justify-center px-5 py-8 xl:px-0"
+>
+  <div
+    class="mx-auto flex max-w-5xl flex-col md:flex-row justify-start gap-4 overflow py-8 xl:px-0"
+  >
+    <div class="flex flex-col gap-6 md:max-w-3xl">
+      <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold md:leading-relaxed">
+        {t("header.h1")}
+      </h1>
+      <div class="flex flex-col gap-6 md:max-w-2xl">
+        <h2
+          class="text-lg font-marameter must be an imported image or an URL, it cannot be a string filepath. Received edium text-aztec-400"
+        >
+          A passionate software developer based in Indonesia, specializing in
+          full-stack web development with a strong interest in open-source
+          development.
+        </h2>
+        <div class="flex flex-col w-full gap-4 md:flex-row lg:flex-row mt-2">
+          <a
+            class="inline-flex justify-center whitespace-nowrap font-medium ring-offset-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-aztec-950 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 dark:ring-offset-aztec-950 dark:focus-visible:ring-aztec-300 bg-aztec-900 text-aztec-50 hover:bg-aztec-900/90 dark:bg-aztec-50 dark:text-aztec-900 dark:hover:bg-aztec-50/90 h-10 items-center gap-1 rounded-md p-5 text-base hover:scale-105 hover:shadow-xl transition duration-300 ease-in-out"
+            href=""
+          >
+            More about me
+          </a>
+          <a
+            class="inline-flex justify-center whitespace-nowrap font-medium ring-offset-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-aztec-950 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 dark:ring-offset-aztec-950 dark:focus-visible:ring-aztec-300 border border-aztec-900 text-aztec-900 hover:bg-aztec-900/90 dark:text-aztec-50 dark:hover:bg-aztec-900/90 h-10 items-center gap-1 rounded-lg p-5 text-base hover:scale-105 hover:shadow-xl transition duration-300 ease-in-out"
+            href=""
+          >
+            Contact me
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="hidden sm:block motion-safe:animate-bounce">
+      <Image class="rounded-full" src={Avatar} alt="Yehezkiel Dio" />
+    </div>
+  </div>
+</main>
+
+<style>
+  @keyframes bounce {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+</style>
